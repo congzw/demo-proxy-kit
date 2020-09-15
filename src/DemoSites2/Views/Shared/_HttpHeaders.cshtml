@@ -1,0 +1,7 @@
+﻿@{
+    var headers = this.Context.Request.Headers;
+    foreach (var header in headers)
+    {
+        <p>@header.Key : @header.Value</p>
+    }
+}

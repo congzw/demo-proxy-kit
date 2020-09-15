@@ -1,0 +1,14 @@
+﻿@{
+    //X-Forwarded-Host : localhost:5066
+    //X-Forwarded-Proto : http
+    var headers = this.Context.Request.Headers;
+    if (headers.TryGetValue("X-Forwarded-Host", out var forwardedHost))
+    {
+        <h2>FROM PROXY Site: <span style="color: red">@forwardedHost</span></h2>
+        <hr />
+    }
+    else
+    {
+        <h2>From Original Site</h2>
+    }
+}

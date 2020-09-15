@@ -24,13 +24,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="javascript:void(0)">@DateTime.Now</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <partial name="_CookieConsentPartial" />
+        <partial name="_ProxyInfo" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -38,7 +41,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - DemoSites2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a><span>@DateTime.Now</span>
+            &copy; 2020 - DemoSites2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
