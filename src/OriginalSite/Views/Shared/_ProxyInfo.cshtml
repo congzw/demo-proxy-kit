@@ -1,0 +1,18 @@
+﻿@{
+    <h2>Original Site: @this.Context.Request.Host</h2>
+    <h2 id="jsHost"></h2>
+    //X-Forwarded-Host : localhost:1234
+    //X-Forwarded-Proto : http
+    var headers = this.Context.Request.Headers;
+    if (headers.TryGetValue("X-Forwarded-Host", out var forwardedHost))
+    {
+        <h2>FROM PROXY: <span style="color: red">@forwardedHost</span></h2>
+    }
+    <hr />
+}
+<script>
+    console.log(window.location);
+    //console.log(window.location.origin);
+    var elem = document.querySelector('#jsHost');
+    elem.textContent = "JS: " + window.location.origin;
+</script>

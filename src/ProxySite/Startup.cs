@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using ProxyKit;
 
-namespace DemoSites
+namespace ProxySite
 {
     public class Startup
     {
@@ -19,9 +19,10 @@ namespace DemoSites
                 app.UseDeveloperExceptionPage();
             }
 
-            //proxy sites: http://localhost:5066
-            var upstreamServerHost = "http://localhost:5136";
-            //todo config
+            //todo：by config
+            //ProxySite is a proxy site: "http://localhost:1950"
+            //OriginalSite is a demo upstream site: "http://localhost:1956"
+            var upstreamServerHost = "http://localhost:1956";
             app.RunProxy(context => context
                 .ForwardTo(upstreamServerHost)
                 .AddXForwardedHeaders()

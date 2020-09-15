@@ -1,6 +1,4 @@
-using System;
-
-namespace DemoSites2.Models
+namespace OriginalSite.Models
 {
     public class ErrorViewModel
     {
